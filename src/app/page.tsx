@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
+
+import classNames from "classnames";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "../styles/index.scss";
-import classNames from "classnames";
-import { useState } from "react";
 
 const DATA = [
   {
@@ -200,6 +201,7 @@ export default function Home() {
       <div className="flex gap-4 py-16 px-36 mb-20">
         {DATA.map((slide, slideIndex) => (
           <div
+            key={slideIndex}
             className={classNames(
               slideIndex !== currentSlide
                 ? "w-[60px] cursor-pointer"
